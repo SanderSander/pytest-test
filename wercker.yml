@@ -1,16 +1,22 @@
 box: wercker/python
+services:
+  - wercker/redis
 # Build definition
 build:
   # The steps that will be executed on build
   steps:
     # A step that executes `pip install` command
-    - pip-install
-
+    - script:
+        name: pip install
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          sudo pip install -r 'requirements/dev.txt'
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
-        name: echo python information
+        name: test
         code: |
-          echo "python version $(python --version) running"
-          echo "pip version $(pip --version) running"
-
+          cd $WERCKER_SOURCE_DIR
+          echo $WERCKER_REDIS_HOST
+          echo $WERCKER_REDIS_PORT
+          py.test
