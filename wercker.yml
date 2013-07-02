@@ -5,12 +5,13 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - flenter/py-virtualenv
     # A step that executes `pip install` command
     - script:
         name: pip install
         code: |
           cd $WERCKER_SOURCE_DIR
-          sudo pip install -r 'requirements/dev.txt'
+          pip install -r 'requirements/dev.txt'
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
@@ -19,4 +20,4 @@ build:
           cd $WERCKER_SOURCE_DIR
           echo $WERCKER_REDIS_HOST
           echo $WERCKER_REDIS_PORT
-          py.test
+          py.test example_test.py
