@@ -1,4 +1,4 @@
-box: wercker/python
+box: flenter/multi-python
 services:
   - wercker/redis
 # Build definition
@@ -8,16 +8,7 @@ build:
     - flenter/py-virtualenv
     # A step that executes `pip install` command
     - script:
-        name: pip install
-        code: |
-          cd $WERCKER_SOURCE_DIR
-          pip install -r 'requirements/dev.txt'
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
-    - script:
         name: test
         code: |
           cd $WERCKER_SOURCE_DIR
-          echo $WERCKER_REDIS_HOST
-          echo $WERCKER_REDIS_PORT
-          py.test example_test.py
+          python3.2 --version
