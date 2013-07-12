@@ -11,4 +11,4 @@ build:
         name: test
         code: |
           cd $WERCKER_SOURCE_DIR
-          python3.2 --version
+          python3.3 --version
