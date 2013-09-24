@@ -5,16 +5,22 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - add-ssh-key:
+        keyname: DEMO_KEY
     - script:
         name: show known hosts
         code: |
           cat $HOME/.ssh/known_hosts
-          rm $HOME/.ssh/known_hosts
           ssh -o ConnectTimeout=10 git@github.com 
-    - flenter/py-virtualenv
-    # A step that executes `pip install` command
     - script:
-        name: test
+        name: pip install private-ssh
         code: |
-          cd $WERCKER_SOURCE_DIR
-          python3.3 --version
+          sudo pip install -r requirements.txt
+
+          #    - flenter/py-virtualenv
+          #    # A step that executes `pip install` command
+          #    - script:
+          #        name: test
+          #        code: |
+          #          cd $WERCKER_SOURCE_DIR
+          #          python3.3 --version
