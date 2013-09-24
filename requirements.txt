@@ -1,1 +1,1 @@
--e git+git@gitub.com:flenter/private-ssh
+-e git+git@gitub.com:flenter/private-ssh#egg=an_example_pypi_project
