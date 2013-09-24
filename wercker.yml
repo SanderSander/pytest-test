@@ -9,6 +9,7 @@ build:
         name: show known hosts
         code: |
           cat $HOME/.ssh/known_hosts
+          rm $HOME/.ssh/known_hosts
           ssh -o ConnectTimeout=10 git@github.com 
     - flenter/py-virtualenv
     # A step that executes `pip install` command
