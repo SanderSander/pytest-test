@@ -5,6 +5,10 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - script:
+        name: show known hosts
+        code: |
+          cat $HOME/.ssh/known_hosts
     - flenter/py-virtualenv
     # A step that executes `pip install` command
     - script:
