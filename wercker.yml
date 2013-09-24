@@ -11,7 +11,7 @@ build:
         name: show known hosts
         code: |
           cat $HOME/.ssh/known_hosts
-          sudo cp $HOME/.ssh/known_hosts -la /root/.ssh/
+          sudo cp $HOME/.ssh/known_hosts  /root/.ssh/
           #sudo ssh -o ConnectTimeout=10 git@github.com 
     - script:
         name: pip install private-ssh
