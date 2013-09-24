@@ -1,4 +1,4 @@
-box: flenter/multi-python
+box: wercker/python
 services:
   - wercker/redis
 # Build definition
