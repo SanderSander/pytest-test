@@ -8,6 +8,12 @@ build:
     - add-ssh-key:
         keyname: DEMO_KEY
     - script:
+        name: copy known_host for root
+        code: |
+          sudo mkdir -p /root/.ssh/
+          sudo cp $HOME/.ssh/known_hosts /root/.ssh/
+          sudo chown root /root/.ssh/known_hosts
+    - script:
         name: pip install private-ssh
         code: |
           cat $HOME/.ssh/config
