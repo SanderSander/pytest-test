@@ -10,7 +10,8 @@ build:
     - script:
         name: pip install private-ssh
         code: |
-          sudo pip install -r requirements.txt
+          cat $HOME/.ssh/config
+          pip install -r requirements.txt
 
           #    - flenter/py-virtualenv
           #    # A step that executes `pip install` command
