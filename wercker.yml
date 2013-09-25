@@ -10,6 +10,7 @@ build:
     - script:
         name: copy known_host for root
         code: |
+          sudo mkdir /root/.ssh/
           sudo cp $HOME/.ssh/known_hosts  /root/.ssh/
           sudo chown root /root/.ssh/known_hosts
     - script:
