@@ -8,13 +8,10 @@ build:
     - add-ssh-key:
         keyname: DEMO_KEY
     - script:
-        name: show known hosts
+        name: copy known_host for root
         code: |
-          cat $HOME/.ssh/known_hosts
-          sudo mkdir /root/.ssh/
           sudo cp $HOME/.ssh/known_hosts  /root/.ssh/
           sudo chown root /root/.ssh/known_hosts
-          sudo ssh -o ConnectTimeout=10 git@github.com 
     - script:
         name: pip install private-ssh
         code: |
