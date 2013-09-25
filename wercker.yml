@@ -5,6 +5,8 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - add-to-known_hosts:
+        hostname: bitbucket.org
     - add-ssh-key:
         keyname: DEMO_KEY
     - script:
