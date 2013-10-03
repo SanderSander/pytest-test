@@ -5,6 +5,14 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - flenter/generate-version:
+        username: admin
+        api_key: f1ac623b0eb2f80f49d68eb9c308ec3da5023c2a
+        for_app: 1
+    - script:
+        name: show environment variables
+        code: |
+          export
     - add-to-known_hosts:
         hostname: bitbucket.org
     - add-ssh-key:
