@@ -12,7 +12,9 @@ build:
     - script:
         name: show environment variables
         code: |
+          echo "$GENERATED_BUILD_NR"
           export
+          
     - add-to-known_hosts:
         hostname: bitbucket.org
     - add-ssh-key:
