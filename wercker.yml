@@ -10,6 +10,15 @@ build:
         code: |
           sudo apt-get update
           sudo apt-get install haveged
+    - flenter/generate-version:
+        username: admin
+        api_key: f1ac623b0eb2f80f49d68eb9c308ec3da5023c2a
+        for_app: 1
+    - script:
+        name: show environment variables
+        code: |
+          echo "$GENERATED_BUILD_NR"
+>>>>>>> e089710fe1882f1ffa75e5e4a5b4a2adc396e5e8
 
     - add-to-known_hosts:
         hostname: bitbucket.org
