@@ -10,6 +10,8 @@ build:
         code: |
           sudo apt-get update
           sudo apt-get install haveged
+          ps aux|grep haveged
+          cat /dev/random | rngtest -c 1000
     - flenter/generate-version:
         username: admin
         api_key: f1ac623b0eb2f80f49d68eb9c308ec3da5023c2a
