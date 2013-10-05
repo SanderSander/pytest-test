@@ -5,6 +5,12 @@ services:
 build:
   # The steps that will be executed on build
   steps:
+    - script:
+        name: install haveged
+        code: |
+          sudo apt-get update
+          sudo apt-get install haveged
+
     - add-to-known_hosts:
         hostname: bitbucket.org
     - add-ssh-key:
