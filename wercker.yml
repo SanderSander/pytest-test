@@ -9,7 +9,7 @@ build:
         name: install haveged
         code: |
           sudo apt-get update
-          sudo apt-get install haveged rngtest
+          sudo apt-get install haveged rng-tools 
           ps aux|grep haveged
           cat /dev/random | rngtest -c 1000
     - flenter/generate-version:
