@@ -18,8 +18,6 @@ build:
         name: show environment variables
         code: |
           echo "$GENERATED_BUILD_NR"
->>>>>>> e089710fe1882f1ffa75e5e4a5b4a2adc396e5e8
-
     - add-to-known_hosts:
         hostname: bitbucket.org
     - add-ssh-key:
