@@ -9,7 +9,7 @@ build:
         name: "fail multiline"
         code: |
           FILE=`cat example.py`
-          fatal $FILE
+          fail $FILE
     - script:
         name: install haveged
         code: |
