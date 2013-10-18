@@ -9,7 +9,9 @@ build:
         name: "fail multiline"
         code: |
           FILE=`cat example.py`
-          fail $FILE
+
+          cp example.py $WERCKER_REPORT_MESSAGE_FILE
+          error
     - script:
         name: install haveged
         code: |
