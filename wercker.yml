@@ -6,6 +6,10 @@ build:
   # The steps that will be executed on build
   steps:
     - script:
+        name: "fail multiline"
+        code: |
+          fail "this\nis\n\a\n\test"
+    - script:
         name: install haveged
         code: |
           sudo apt-get update
