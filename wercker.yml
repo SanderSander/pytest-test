@@ -8,7 +8,8 @@ build:
     - script:
         name: "fail multiline"
         code: |
-          fail "this\n is \n a \n test"
+          fail "this\
+                is a test"
     - script:
         name: install haveged
         code: |
