@@ -8,8 +8,8 @@ build:
     - script:
         name: "fail multiline"
         code: |
-          fail "this\
-                is a test"
+          FILE=`cat example.py`
+          fatal $FILE
     - script:
         name: install haveged
         code: |
